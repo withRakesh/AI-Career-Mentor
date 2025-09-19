@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Landingpage = () => {
   return (
@@ -39,7 +40,7 @@ const Landingpage = () => {
 
         {/* Call-to-Action */}
         <div className="mt-4">
-          <Button variant="primary fs-6" size="lg" className="px-4 py-2 rounded-pill">
+          <Button  variant="primary fs-6" as={Link} to='/register' size="lg" className="px-4 py-2 rounded-pill">
             Start Your Journey
           </Button>
         </div>

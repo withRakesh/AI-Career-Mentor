@@ -18,7 +18,7 @@ const Works = () => {
               <Card className="text-center bg-white border-0 p-3 shadow-sm h-100"     >
                 <div className="icon mb-3">
                   <i
-                    class="fas fa-sticky-note"
+                    className="fas fa-sticky-note"
                     style={{
                       backgroundColor: "#a8dbf3ff",
                       color: "blue",
@@ -40,7 +40,7 @@ const Works = () => {
               <Card className="text-center bg-white border-0 p-3 shadow-sm h-100" >
                 <div className="icon mb-3">
                   <i
-                    class="fas fa-route"
+                    className="fas fa-route"
                     style={{
                       backgroundColor: "#a8dbf3ff",
                       color: "blue",
@@ -61,7 +61,7 @@ const Works = () => {
               <Card className="text-center bg-white border-0 p-3 shadow-sm h-100" >
                 <div className="icon mb-3">
                   <i
-                    class="fas fa-rocket"
+                    className="fas fa-rocket"
                     style={{
                       backgroundColor: "#a8dbf3ff",
                       color: "blue",

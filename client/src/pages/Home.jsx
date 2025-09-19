@@ -5,6 +5,7 @@ import Works from '../components/Works'
 import Testimonial from '../components/Testimonial'
 import { Career } from '../components/Career'
 import Footer from '../components/Footer'
+import Register from './Register'
 
 const Home = () => {
   return (
