@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Container, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -26,7 +26,15 @@ const Login = () => {
 
       alert(res.data.message || "login successfully");
 
+      
       navigate("/feedback");
+
+         setTimeout(() => {
+      window.location.reload();
+    }, 100);
+     
+
+ 
 
       setUser({ email: "", password: "" });
     } catch (err) {

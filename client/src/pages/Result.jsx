@@ -1,17 +1,17 @@
-import React from 'react'
-import FeedbackResults from '../components/FeedbackResults'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
- 
+import React, { useEffect, useState, useContext } from "react";
+import FeedbackResults from "../components/FeedbackResults";
+import Footer from "../components/Footer";
+
+import FeedbackHeader from "../components/FeedbackHeader";
 
 const Result = () => {
   return (
     <div>
-        <Header />
-        <FeedbackResults />
-        <Footer />
+      <FeedbackHeader />
+      <FeedbackResults />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Result
+export default Result;
