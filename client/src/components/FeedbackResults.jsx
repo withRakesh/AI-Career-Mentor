@@ -12,22 +12,24 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import Header from "./Header";
-
+ 
 const FeedbackResults = ({ data }) => (
   <Card className="mb-4">
     <Card.Body>
-      <Card.Title>Strengths & Weaknesses</Card.Title>
-      <ul>
-        <li>
-          <b>Strengths:</b> {data?.strengths || "N/A"}
-        </li>
-        <li>
-          <b>Weakness:</b> {data?.weaknesses || "N/A"}
-        </li>
-      </ul>
+      <Card.Title>Extracted Resume Text</Card.Title>
+      <pre style={{ whiteSpace: "pre-wrap" }}>
+        {data?.text || "No text extracted"}
+      </pre>
+
+      <Card.Title className="mt-3">AI Feedback</Card.Title>
+      <pre style={{ whiteSpace: "pre-wrap", color: "green" }}>
+        {data?.feedback || "No AI feedback yet"}
+      </pre>
     </Card.Body>
   </Card>
 );
+
+ 
 
 const JobRoles = () => (
   <Card className="mb-4">

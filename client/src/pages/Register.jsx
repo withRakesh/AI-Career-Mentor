@@ -51,7 +51,7 @@ const Register = () => {
     >
       <Container
         className="p-4 rounded bg-white shadow"
-        style={{ maxWidth: "500px" }}
+        style={{ maxWidth: "400px" }}
       >
         <h3 className="text-center mb-4 text-primary">Register</h3>
         <Form onSubmit={handleSubmit}>
