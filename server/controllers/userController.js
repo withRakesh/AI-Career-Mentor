@@ -1,6 +1,7 @@
 const User = require("../model/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const axios = require('axios')
 
 // REGISTER
 exports.register = async (req, res) => {
@@ -85,5 +86,42 @@ exports.login = async (req, res) => {
     });
   } catch (err) {
     res.status(404).json({ message: "server error", err });
+  }
+};
+
+
+ 
+
+exports.chatWithAI = async (req, res) => {
+  try {
+    const { message } = req.body;
+
+    if (!message) {
+      return res.status(400).json({ error: "Message is required" });
+    }
+
+    const response = await axios.post(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        model: "deepseek/deepseek-r1:free", // You can change model name
+        messages: [{ role: "user", content: message }],
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    res.status(200).json(response.data);
+  } catch (error) {
+    console.error("Chat API Error:", error.response?.data || error.message);
+    res.status(500).json({
+      error:
+        error.response?.data?.error?.message ||
+        error.message ||
+        "Internal server error",
+    });
   }
 };
